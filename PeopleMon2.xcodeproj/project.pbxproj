@@ -12,16 +12,22 @@
 		44AF6BF51DCE168100DF4FDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44AF6BF31DCE168100DF4FDC /* Main.storyboard */; };
 		44AF6BF71DCE168100DF4FDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44AF6BF61DCE168100DF4FDC /* Assets.xcassets */; };
 		44AF6BFA1DCE168100DF4FDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44AF6BF81DCE168100DF4FDC /* LaunchScreen.storyboard */; };
+		44FCA7CD1DCE1D9200933ACC /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44FCA7CC1DCE1D9200933ACC /* LoginStoryboard.storyboard */; };
+		6995F5831071BB440B910429 /* Pods_PeopleMon2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA9C1A96EC60F02051159B1B /* Pods_PeopleMon2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2825931A99CD9FF320EF2711 /* Pods-PeopleMon2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeopleMon2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PeopleMon2/Pods-PeopleMon2.debug.xcconfig"; sourceTree = "<group>"; };
 		44AF6BEC1DCE168100DF4FDC /* PeopleMon2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeopleMon2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44AF6BEF1DCE168100DF4FDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		44AF6BF11DCE168100DF4FDC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		44AF6BF11DCE168100DF4FDC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = PeopleMon2/ViewController.swift; sourceTree = "<group>"; };
 		44AF6BF41DCE168100DF4FDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		44AF6BF61DCE168100DF4FDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44AF6BF91DCE168100DF4FDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44AF6BFB1DCE168100DF4FDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44FCA7CC1DCE1D9200933ACC /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
+		CA9C1A96EC60F02051159B1B /* Pods_PeopleMon2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PeopleMon2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F78B8EB5D78D57A2C227DD1E /* Pods-PeopleMon2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeopleMon2.release.xcconfig"; path = "Pods/Target Support Files/Pods-PeopleMon2/Pods-PeopleMon2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,40 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6995F5831071BB440B910429 /* Pods_PeopleMon2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0116E2FCB183EC73E872D2E3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2825931A99CD9FF320EF2711 /* Pods-PeopleMon2.debug.xcconfig */,
+				F78B8EB5D78D57A2C227DD1E /* Pods-PeopleMon2.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		127771AF803EDF2B5A90D715 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CA9C1A96EC60F02051159B1B /* Pods_PeopleMon2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		44AF6BE31DCE168100DF4FDC = {
 			isa = PBXGroup;
 			children = (
+				44FCA7C61DCE19EA00933ACC /* TableCells */,
+				44FCA7C71DCE1A5D00933ACC /* StoryBoads */,
+				44FCA7C81DCE1A9C00933ACC /* Models */,
 				44AF6BEE1DCE168100DF4FDC /* PeopleMon2 */,
 				44AF6BED1DCE168100DF4FDC /* Products */,
+				0116E2FCB183EC73E872D2E3 /* Pods */,
+				127771AF803EDF2B5A90D715 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +84,43 @@
 			isa = PBXGroup;
 			children = (
 				44AF6BEF1DCE168100DF4FDC /* AppDelegate.swift */,
-				44AF6BF11DCE168100DF4FDC /* ViewController.swift */,
-				44AF6BF31DCE168100DF4FDC /* Main.storyboard */,
 				44AF6BF61DCE168100DF4FDC /* Assets.xcassets */,
 				44AF6BF81DCE168100DF4FDC /* LaunchScreen.storyboard */,
 				44AF6BFB1DCE168100DF4FDC /* Info.plist */,
 			);
 			path = PeopleMon2;
+			sourceTree = "<group>";
+		};
+		44FCA7C61DCE19EA00933ACC /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = TableCells;
+			sourceTree = "<group>";
+		};
+		44FCA7C71DCE1A5D00933ACC /* StoryBoads */ = {
+			isa = PBXGroup;
+			children = (
+				44FCA7C91DCE1C2400933ACC /* ViewControllers */,
+				44AF6BF31DCE168100DF4FDC /* Main.storyboard */,
+				44FCA7CC1DCE1D9200933ACC /* LoginStoryboard.storyboard */,
+			);
+			name = StoryBoads;
+			sourceTree = "<group>";
+		};
+		44FCA7C81DCE1A9C00933ACC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		44FCA7C91DCE1C2400933ACC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				44AF6BF11DCE168100DF4FDC /* ViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +130,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 44AF6BFE1DCE168100DF4FDC /* Build configuration list for PBXNativeTarget "PeopleMon2" */;
 			buildPhases = (
+				F852790EC148DC8C8DB8FA38 /* [CP] Check Pods Manifest.lock */,
 				44AF6BE81DCE168100DF4FDC /* Sources */,
 				44AF6BE91DCE168100DF4FDC /* Frameworks */,
 				44AF6BEA1DCE168100DF4FDC /* Resources */,
+				C1CCD70CAD7BA18D9B9426EB /* [CP] Embed Pods Frameworks */,
+				FA17248A068D8AB28DF4B3D7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -126,10 +188,59 @@
 				44AF6BFA1DCE168100DF4FDC /* LaunchScreen.storyboard in Resources */,
 				44AF6BF71DCE168100DF4FDC /* Assets.xcassets in Resources */,
 				44AF6BF51DCE168100DF4FDC /* Main.storyboard in Resources */,
+				44FCA7CD1DCE1D9200933ACC /* LoginStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C1CCD70CAD7BA18D9B9426EB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PeopleMon2/Pods-PeopleMon2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F852790EC148DC8C8DB8FA38 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FA17248A068D8AB28DF4B3D7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PeopleMon2/Pods-PeopleMon2-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		44AF6BE81DCE168100DF4FDC /* Sources */ = {
@@ -150,6 +261,7 @@
 				44AF6BF41DCE168100DF4FDC /* Base */,
 			);
 			name = Main.storyboard;
+			path = PeopleMon2;
 			sourceTree = "<group>";
 		};
 		44AF6BF81DCE168100DF4FDC /* LaunchScreen.storyboard */ = {
@@ -256,6 +368,7 @@
 		};
 		44AF6BFF1DCE168100DF4FDC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2825931A99CD9FF320EF2711 /* Pods-PeopleMon2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PeopleMon2/Info.plist;
@@ -268,6 +381,7 @@
 		};
 		44AF6C001DCE168100DF4FDC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F78B8EB5D78D57A2C227DD1E /* Pods-PeopleMon2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PeopleMon2/Info.plist;
@@ -297,6 +411,7 @@
 				44AF6C001DCE168100DF4FDC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

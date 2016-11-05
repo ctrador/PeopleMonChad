@@ -13,6 +13,8 @@
 		44AF6BF71DCE168100DF4FDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44AF6BF61DCE168100DF4FDC /* Assets.xcassets */; };
 		44AF6BFA1DCE168100DF4FDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44AF6BF81DCE168100DF4FDC /* LaunchScreen.storyboard */; };
 		44FCA7CD1DCE1D9200933ACC /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44FCA7CC1DCE1D9200933ACC /* LoginStoryboard.storyboard */; };
+		44FCA7CF1DCE1F8700933ACC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCA7CE1DCE1F8700933ACC /* LoginViewController.swift */; };
+		44FCA7D31DCE220B00933ACC /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCA7D21DCE220B00933ACC /* NetworkModel.swift */; };
 		6995F5831071BB440B910429 /* Pods_PeopleMon2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA9C1A96EC60F02051159B1B /* Pods_PeopleMon2.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +28,8 @@
 		44AF6BF91DCE168100DF4FDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44AF6BFB1DCE168100DF4FDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44FCA7CC1DCE1D9200933ACC /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
+		44FCA7CE1DCE1F8700933ACC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = StoryBoards/ViewControllers/LoginViewController.swift; sourceTree = "<group>"; };
+		44FCA7D21DCE220B00933ACC /* NetworkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkModel.swift; path = Networking/NetworkModel.swift; sourceTree = "<group>"; };
 		CA9C1A96EC60F02051159B1B /* Pods_PeopleMon2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PeopleMon2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F78B8EB5D78D57A2C227DD1E /* Pods-PeopleMon2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeopleMon2.release.xcconfig"; path = "Pods/Target Support Files/Pods-PeopleMon2/Pods-PeopleMon2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +87,7 @@
 		44AF6BEE1DCE168100DF4FDC /* PeopleMon2 */ = {
 			isa = PBXGroup;
 			children = (
+				44FCA7D11DCE20E900933ACC /* Networking */,
 				44AF6BEF1DCE168100DF4FDC /* AppDelegate.swift */,
 				44AF6BF61DCE168100DF4FDC /* Assets.xcassets */,
 				44AF6BF81DCE168100DF4FDC /* LaunchScreen.storyboard */,
@@ -111,6 +116,7 @@
 		44FCA7C81DCE1A9C00933ACC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				44FCA7D01DCE209D00933ACC /* Componants */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -119,8 +125,24 @@
 			isa = PBXGroup;
 			children = (
 				44AF6BF11DCE168100DF4FDC /* ViewController.swift */,
+				44FCA7CE1DCE1F8700933ACC /* LoginViewController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		44FCA7D01DCE209D00933ACC /* Componants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Componants;
+			sourceTree = "<group>";
+		};
+		44FCA7D11DCE20E900933ACC /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				44FCA7D21DCE220B00933ACC /* NetworkModel.swift */,
+			);
+			name = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +269,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44FCA7D31DCE220B00933ACC /* NetworkModel.swift in Sources */,
+				44FCA7CF1DCE1F8700933ACC /* LoginViewController.swift in Sources */,
 				44AF6BF21DCE168100DF4FDC /* ViewController.swift in Sources */,
 				44AF6BF01DCE168100DF4FDC /* AppDelegate.swift in Sources */,
 			);

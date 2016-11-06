@@ -15,6 +15,11 @@
 		44FCA7CD1DCE1D9200933ACC /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44FCA7CC1DCE1D9200933ACC /* LoginStoryboard.storyboard */; };
 		44FCA7CF1DCE1F8700933ACC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCA7CE1DCE1F8700933ACC /* LoginViewController.swift */; };
 		44FCA7D31DCE220B00933ACC /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCA7D21DCE220B00933ACC /* NetworkModel.swift */; };
+		44FCA7D51DCE23C200933ACC /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCA7D41DCE23C200933ACC /* WebServices.swift */; };
+		44FCA7D71DCE248400933ACC /* WebServicesExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCA7D61DCE248400933ACC /* WebServicesExtension.swift */; };
+		44FCA7DA1DCE2AF300933ACC /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCA7D91DCE2AF300933ACC /* Test.swift */; };
+		44FCA7DC1DCE2C7800933ACC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCA7DB1DCE2C7800933ACC /* Constants.swift */; };
+		44FCA7DE1DCF9F8700933ACC /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCA7DD1DCF9F8700933ACC /* Account.swift */; };
 		6995F5831071BB440B910429 /* Pods_PeopleMon2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA9C1A96EC60F02051159B1B /* Pods_PeopleMon2.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +35,12 @@
 		44FCA7CC1DCE1D9200933ACC /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
 		44FCA7CE1DCE1F8700933ACC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = StoryBoards/ViewControllers/LoginViewController.swift; sourceTree = "<group>"; };
 		44FCA7D21DCE220B00933ACC /* NetworkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkModel.swift; path = Networking/NetworkModel.swift; sourceTree = "<group>"; };
+		44FCA7D41DCE23C200933ACC /* WebServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebServices.swift; path = Networking/WebServices.swift; sourceTree = "<group>"; };
+		44FCA7D61DCE248400933ACC /* WebServicesExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebServicesExtension.swift; path = Networking/WebServicesExtension.swift; sourceTree = "<group>"; };
+		44FCA7D81DCE284600933ACC /* PeopleMonBridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PeopleMonBridging-header.h"; sourceTree = "<group>"; };
+		44FCA7D91DCE2AF300933ACC /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Test.swift; path = Models/Componants/Test.swift; sourceTree = "<group>"; };
+		44FCA7DB1DCE2C7800933ACC /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Models/Componants/Constants.swift; sourceTree = "<group>"; };
+		44FCA7DD1DCF9F8700933ACC /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Account.swift; path = Models/Account.swift; sourceTree = "<group>"; };
 		CA9C1A96EC60F02051159B1B /* Pods_PeopleMon2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PeopleMon2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F78B8EB5D78D57A2C227DD1E /* Pods-PeopleMon2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeopleMon2.release.xcconfig"; path = "Pods/Target Support Files/Pods-PeopleMon2/Pods-PeopleMon2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +103,7 @@
 				44AF6BF61DCE168100DF4FDC /* Assets.xcassets */,
 				44AF6BF81DCE168100DF4FDC /* LaunchScreen.storyboard */,
 				44AF6BFB1DCE168100DF4FDC /* Info.plist */,
+				44FCA7D81DCE284600933ACC /* PeopleMonBridging-header.h */,
 			);
 			path = PeopleMon2;
 			sourceTree = "<group>";
@@ -117,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				44FCA7D01DCE209D00933ACC /* Componants */,
+				44FCA7DD1DCF9F8700933ACC /* Account.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -133,6 +146,8 @@
 		44FCA7D01DCE209D00933ACC /* Componants */ = {
 			isa = PBXGroup;
 			children = (
+				44FCA7D91DCE2AF300933ACC /* Test.swift */,
+				44FCA7DB1DCE2C7800933ACC /* Constants.swift */,
 			);
 			name = Componants;
 			sourceTree = "<group>";
@@ -141,6 +156,8 @@
 			isa = PBXGroup;
 			children = (
 				44FCA7D21DCE220B00933ACC /* NetworkModel.swift */,
+				44FCA7D41DCE23C200933ACC /* WebServices.swift */,
+				44FCA7D61DCE248400933ACC /* WebServicesExtension.swift */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -270,9 +287,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				44FCA7D31DCE220B00933ACC /* NetworkModel.swift in Sources */,
+				44FCA7D51DCE23C200933ACC /* WebServices.swift in Sources */,
 				44FCA7CF1DCE1F8700933ACC /* LoginViewController.swift in Sources */,
+				44FCA7DA1DCE2AF300933ACC /* Test.swift in Sources */,
 				44AF6BF21DCE168100DF4FDC /* ViewController.swift in Sources */,
+				44FCA7DE1DCF9F8700933ACC /* Account.swift in Sources */,
+				44FCA7D71DCE248400933ACC /* WebServicesExtension.swift in Sources */,
 				44AF6BF01DCE168100DF4FDC /* AppDelegate.swift in Sources */,
+				44FCA7DC1DCE2C7800933ACC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

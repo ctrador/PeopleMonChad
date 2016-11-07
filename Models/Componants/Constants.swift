@@ -37,19 +37,29 @@ struct Constants {
     }
     
     // Step 9: BudgetUser Constants
+    struct Account {
+        static let id = "id"
+        static let email = "email"
+        static let hasRegistered = "has_registered"
+        static let loginPrivider = "login_privider"
+        static let fullName = "full_name"
+        static let avatarBase64 = "Avatar_base_64"
+        static let lastCheckInLongitude = "last_checkin_longitude"
+        static let lastCheckInLatitude = "last_checkin_latitude"
+        static let lastCheckInDateTime = "last_checin_date_time"
+        static let authorization = "authorization"
+        static let oldPassword = "old_password"
+        static let newPassword = "new_password"
+        static let confirmPassword = "confirm_password"
+        
+    }
+    
+    
+    
+    // Step 10: Account Constants
     struct BudgetUser {
         static let id = "id"
         static let email = "email"
-        static let username = "username"
-        static let password = "password"
-        static let token = "token"
-        static let expirationDate = "expiration"
-    }
-    
-    // Step 10: Category Constants
-    struct Category {
-        static let id = "id"
-        static let name = "name"
         static let categoryInfo = "category_info"
         static let startDate = "start_date"
         static let endDate = "end_date"

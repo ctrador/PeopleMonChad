@@ -20,6 +20,8 @@
 		44FCA7DA1DCE2AF300933ACC /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCA7D91DCE2AF300933ACC /* Test.swift */; };
 		44FCA7DC1DCE2C7800933ACC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCA7DB1DCE2C7800933ACC /* Constants.swift */; };
 		44FCA7DE1DCF9F8700933ACC /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCA7DD1DCF9F8700933ACC /* Account.swift */; };
+		44FCA7E21DD02DF000933ACC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCA7E11DD02DF000933ACC /* User.swift */; };
+		44FCA7E41DD02EC600933ACC /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCA7E31DD02EC600933ACC /* Auth.swift */; };
 		6995F5831071BB440B910429 /* Pods_PeopleMon2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA9C1A96EC60F02051159B1B /* Pods_PeopleMon2.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,8 @@
 		44FCA7D91DCE2AF300933ACC /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Test.swift; path = Models/Componants/Test.swift; sourceTree = "<group>"; };
 		44FCA7DB1DCE2C7800933ACC /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Models/Componants/Constants.swift; sourceTree = "<group>"; };
 		44FCA7DD1DCF9F8700933ACC /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Account.swift; path = Models/Account.swift; sourceTree = "<group>"; };
+		44FCA7E11DD02DF000933ACC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
+		44FCA7E31DD02EC600933ACC /* Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Auth.swift; path = Models/Auth.swift; sourceTree = "<group>"; };
 		CA9C1A96EC60F02051159B1B /* Pods_PeopleMon2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PeopleMon2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F78B8EB5D78D57A2C227DD1E /* Pods-PeopleMon2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeopleMon2.release.xcconfig"; path = "Pods/Target Support Files/Pods-PeopleMon2/Pods-PeopleMon2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,6 +134,8 @@
 			children = (
 				44FCA7D01DCE209D00933ACC /* Componants */,
 				44FCA7DD1DCF9F8700933ACC /* Account.swift */,
+				44FCA7E11DD02DF000933ACC /* User.swift */,
+				44FCA7E31DD02EC600933ACC /* Auth.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -292,8 +298,10 @@
 				44FCA7DA1DCE2AF300933ACC /* Test.swift in Sources */,
 				44AF6BF21DCE168100DF4FDC /* ViewController.swift in Sources */,
 				44FCA7DE1DCF9F8700933ACC /* Account.swift in Sources */,
+				44FCA7E41DD02EC600933ACC /* Auth.swift in Sources */,
 				44FCA7D71DCE248400933ACC /* WebServicesExtension.swift in Sources */,
 				44AF6BF01DCE168100DF4FDC /* AppDelegate.swift in Sources */,
+				44FCA7E21DD02DF000933ACC /* User.swift in Sources */,
 				44FCA7DC1DCE2C7800933ACC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

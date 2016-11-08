@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44A0B31D1DD0D07F006C501B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A0B31C1DD0D07F006C501B /* User.swift */; };
+		44A0B31F1DD14413006C501B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A0B31E1DD14413006C501B /* RegisterViewController.swift */; };
+		44A0B3211DD149FA006C501B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A0B3201DD149FA006C501B /* Utils.swift */; };
+		44A0B3231DD14B31006C501B /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A0B3221DD14B31006C501B /* UserStore.swift */; };
 		44AF6BF01DCE168100DF4FDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AF6BEF1DCE168100DF4FDC /* AppDelegate.swift */; };
 		44AF6BF21DCE168100DF4FDC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AF6BF11DCE168100DF4FDC /* ViewController.swift */; };
 		44AF6BF51DCE168100DF4FDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44AF6BF31DCE168100DF4FDC /* Main.storyboard */; };
@@ -20,13 +24,15 @@
 		44FCA7DA1DCE2AF300933ACC /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCA7D91DCE2AF300933ACC /* Test.swift */; };
 		44FCA7DC1DCE2C7800933ACC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCA7DB1DCE2C7800933ACC /* Constants.swift */; };
 		44FCA7DE1DCF9F8700933ACC /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCA7DD1DCF9F8700933ACC /* Account.swift */; };
-		44FCA7E21DD02DF000933ACC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCA7E11DD02DF000933ACC /* User.swift */; };
-		44FCA7E41DD02EC600933ACC /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCA7E31DD02EC600933ACC /* Auth.swift */; };
 		6995F5831071BB440B910429 /* Pods_PeopleMon2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA9C1A96EC60F02051159B1B /* Pods_PeopleMon2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2825931A99CD9FF320EF2711 /* Pods-PeopleMon2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeopleMon2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PeopleMon2/Pods-PeopleMon2.debug.xcconfig"; sourceTree = "<group>"; };
+		44A0B31C1DD0D07F006C501B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
+		44A0B31E1DD14413006C501B /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = StoryBoards/ViewControllers/RegisterViewController.swift; sourceTree = "<group>"; };
+		44A0B3201DD149FA006C501B /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = Models/Componants/Utils.swift; sourceTree = "<group>"; };
+		44A0B3221DD14B31006C501B /* UserStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserStore.swift; path = Models/Componants/UserStore.swift; sourceTree = "<group>"; };
 		44AF6BEC1DCE168100DF4FDC /* PeopleMon2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeopleMon2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44AF6BEF1DCE168100DF4FDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44AF6BF11DCE168100DF4FDC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = PeopleMon2/ViewController.swift; sourceTree = "<group>"; };
@@ -43,8 +49,6 @@
 		44FCA7D91DCE2AF300933ACC /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Test.swift; path = Models/Componants/Test.swift; sourceTree = "<group>"; };
 		44FCA7DB1DCE2C7800933ACC /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Models/Componants/Constants.swift; sourceTree = "<group>"; };
 		44FCA7DD1DCF9F8700933ACC /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Account.swift; path = Models/Account.swift; sourceTree = "<group>"; };
-		44FCA7E11DD02DF000933ACC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
-		44FCA7E31DD02EC600933ACC /* Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Auth.swift; path = Models/Auth.swift; sourceTree = "<group>"; };
 		CA9C1A96EC60F02051159B1B /* Pods_PeopleMon2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PeopleMon2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F78B8EB5D78D57A2C227DD1E /* Pods-PeopleMon2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeopleMon2.release.xcconfig"; path = "Pods/Target Support Files/Pods-PeopleMon2/Pods-PeopleMon2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,8 +138,7 @@
 			children = (
 				44FCA7D01DCE209D00933ACC /* Componants */,
 				44FCA7DD1DCF9F8700933ACC /* Account.swift */,
-				44FCA7E11DD02DF000933ACC /* User.swift */,
-				44FCA7E31DD02EC600933ACC /* Auth.swift */,
+				44A0B31C1DD0D07F006C501B /* User.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 			children = (
 				44AF6BF11DCE168100DF4FDC /* ViewController.swift */,
 				44FCA7CE1DCE1F8700933ACC /* LoginViewController.swift */,
+				44A0B31E1DD14413006C501B /* RegisterViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -154,6 +158,8 @@
 			children = (
 				44FCA7D91DCE2AF300933ACC /* Test.swift */,
 				44FCA7DB1DCE2C7800933ACC /* Constants.swift */,
+				44A0B3201DD149FA006C501B /* Utils.swift */,
+				44A0B3221DD14B31006C501B /* UserStore.swift */,
 			);
 			name = Componants;
 			sourceTree = "<group>";
@@ -198,7 +204,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Chad Trador";
 				TargetAttributes = {
 					44AF6BEB1DCE168100DF4FDC = {
@@ -293,16 +299,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				44FCA7D31DCE220B00933ACC /* NetworkModel.swift in Sources */,
+				44A0B31F1DD14413006C501B /* RegisterViewController.swift in Sources */,
 				44FCA7D51DCE23C200933ACC /* WebServices.swift in Sources */,
 				44FCA7CF1DCE1F8700933ACC /* LoginViewController.swift in Sources */,
 				44FCA7DA1DCE2AF300933ACC /* Test.swift in Sources */,
 				44AF6BF21DCE168100DF4FDC /* ViewController.swift in Sources */,
 				44FCA7DE1DCF9F8700933ACC /* Account.swift in Sources */,
-				44FCA7E41DD02EC600933ACC /* Auth.swift in Sources */,
 				44FCA7D71DCE248400933ACC /* WebServicesExtension.swift in Sources */,
 				44AF6BF01DCE168100DF4FDC /* AppDelegate.swift in Sources */,
-				44FCA7E21DD02DF000933ACC /* User.swift in Sources */,
+				44A0B31D1DD0D07F006C501B /* User.swift in Sources */,
 				44FCA7DC1DCE2C7800933ACC /* Constants.swift in Sources */,
+				44A0B3211DD149FA006C501B /* Utils.swift in Sources */,
+				44A0B3231DD14B31006C501B /* UserStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +355,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -396,6 +405,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -424,6 +434,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2825931A99CD9FF320EF2711 /* Pods-PeopleMon2.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PeopleMon2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -437,6 +448,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F78B8EB5D78D57A2C227DD1E /* Pods-PeopleMon2.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PeopleMon2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

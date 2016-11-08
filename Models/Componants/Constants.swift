@@ -51,24 +51,35 @@ struct Constants {
         static let oldPassword = "old_password"
         static let newPassword = "new_password"
         static let confirmPassword = "confirm_password"
-        
+        static let password = "password"
     }
     
     
     
-    // Step 10: Account Constants
-    struct BudgetUser {
-        static let id = "id"
-        static let email = "email"
-        static let categoryInfo = "category_info"
-        static let startDate = "start_date"
-        static let endDate = "end_date"
-        static let user = "user"
-        static let amount = "amount"
+    // Step 10: User Constants
+    struct User {
+        static let userId = "user_id"
+        static let userName = "user_name"
+        static let avatarBase64 = "avatar_base_64"
+        static let longitude = "longitude"
+        static let latitude = "latitude"
+        static let created = "created"
+        static let caughtUserId = "caught_user_id"
+        static let conversationId = "conversation_id"
+        static let recipientId = "recipient_id"
+        static let recipientName = "recipent_name"
+        static let lastMessage = "last_message"
+        static let messageCount = "message_count"
+        static let senderId = "sender_id"
+        static let senderName = "sender_name"
+        static let recipientAvatarBase64 = "recipient_avatar_base64"
+        static let senderAvatarBase64 = "sender_avatar_base_64"
+        static let count = "count"
+        static let messageId = "message_id"
+        static let message = "message"
+        static let recipientUserId = " recipient_user_id"
+        static let senderUserId = "sender_user_id"
         
-        static let month = "month"
-        static let day = "day"
-        static let year = "year"
     }
     
     // Step 11: Expense Constants

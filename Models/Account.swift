@@ -25,21 +25,20 @@ class Account: NetworkModel {
     var newPassword: String?
     var confirmPassword: String?
     var apiKey = "iOSandroid301november2016"
+    var password: String?
     
     
-    // Request Type
+    //Request Type
     enum RequestType {
         case userInfo
         case logout
         case changePasword
         case setPassword
         case register
-        case authorization
-        
-    }
-    var requestType = RequestType.userInfo
     
-    //var searchDate : Date?
+    }
+    var requestType = RequestType.register
+    
     
     // empty constructor
     required init() {}
@@ -52,24 +51,27 @@ class Account: NetworkModel {
         loginProvider = try? json.getString(at: Constants.Account.loginPrivider)
         fullName = try? json.getString(at: Constants.Account.fullName)
         avatarBase64 = try? json.getString(at: Constants.Account.avatarBase64)
+        password = try? json.getString(at: Constants.Account.password)
         lastCheckInLongitude = try? json.getDouble(at: Constants.Account.lastCheckInLongitude)
         lastCheckInLatitude = try? json.getDouble(at: Constants.Account.lastCheckInLatitude)
         lastCheckInDateTime = try? json.getString(at: Constants.Account.lastCheckInDateTime)
         
     }
     
-    init(email: String, hasRegistered: Bool, loginProvider: String, fullName: String, avatarBase64: String, lastCheckinLongitude: Double, lastCheckinLatitude: Double, lastCheckinDate: String) {
+    init(id: String, email: String, hasRegistered: Bool, loginProvider: String, fullName: String, avatarBase64: String, lastCheckinLongitude: Double, lastCheckinLatitude: Double, lastCheckinDate: String, password: String) {
+        self.id = id
         self.email = email
         self.hasRegistered = hasRegistered
         self.loginProvider = loginProvider
         self.fullName = fullName
         self.avatarBase64 = avatarBase64
-        
+        self.password = password
+        //self.lastCheckInLatitude = lastCheckInLatitude
+        //self.lastCheckInLongitude = lastCheckInLongitude
+        //self.lastCheckInDateTime = lastCheckInDateTime
     }
-    
-    init(authorization: String) {
-        requestType = .authorization
-        
+    init (userInfo: String){
+        requestType = .userInfo
     }
     
     init(register: String) {
@@ -92,7 +94,7 @@ class Account: NetworkModel {
     // Always return HTTP.GET
     func method() -> Alamofire.HTTPMethod {
         switch requestType {
-        case .userInfo:
+        case .register:
             return .post
         default:
             return .get
@@ -103,17 +105,15 @@ class Account: NetworkModel {
     func path() -> String {
         switch requestType {
         case .userInfo:
-            return "/api/account/userInfoAccount"
+            return "/api/Account/userInfo"
         case .logout:
-            return "/api/account/logoutAccount"
+            return "/api/Account/logout"
         case .changePasword:
-            return "/api/account/changePasswordAccount"
+            return "/api/Account/changePassword"
         case .setPassword:
-            return "/api/account/setPasswordAccount"
+            return "/api/Account/setPassword"
         case .register:
-            return "/api/account/registerAccount"
-        case.authorization:
-            return "/api/account/authorizationAccount"
+            return "/api/Account/registerAccount"
             
         }
     }

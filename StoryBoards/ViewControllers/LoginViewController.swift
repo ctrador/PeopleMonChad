@@ -44,20 +44,20 @@ class LoginViewController: UIViewController {
         }
         
         // going to go ahead with the login
-//        MBProgressHUD.showAdded(to: view, animated: true)
-//        let user = Account(username: username, password: password)
-//        UserStore.shared.loging(user) { (succcess, error) in
-//            MBProgressHUD.hide(for: self.view, animated: true)
-//            
-//            if succcess {
-//                self.dismiss(animated: true, completion: nil)
-//            }else  if let error = error {
-//                self.present(Utils.createAlert(message: error), animated: true, completion: nil)
-//            }else {
-//                self.present(Utils.createAlert(message: Constants.JSON.unknownError), animated: true, completion: nil)
-//            }
-//        }
-//    }
+       MBProgressHUD.showAdded(to: view, animated: true)
+        let user = Account(fullName: username, avatarBase64: password)
+        UserStore.shared.loging(user) { (succcess, error) in
+            MBProgressHUD.hide(for: self.view, animated: true)
+            
+            if succcess {
+                self.dismiss(animated: true, completion: nil)
+            }else  if let error = error {
+                self.present(Utils.createAlert(message: error), animated: true, completion: nil)
+            }else {
+                self.present(Utils.createAlert(message: Constants.JSON.unknownError), animated: true, completion: nil)
+            }
+        }
+    }
     
     /*
      // MARK: - Navigation
@@ -72,4 +72,4 @@ class LoginViewController: UIViewController {
     
 }
 
-}
+

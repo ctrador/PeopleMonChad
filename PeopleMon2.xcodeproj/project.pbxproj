@@ -16,12 +16,12 @@
 		44AF6BF71DCE168100DF4FDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44AF6BF61DCE168100DF4FDC /* Assets.xcassets */; };
 		44AF6BFA1DCE168100DF4FDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44AF6BF81DCE168100DF4FDC /* LaunchScreen.storyboard */; };
 		44B4A7B31DD2B06D00EC4EE5 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B4A7B21DD2B06D00EC4EE5 /* UserListViewController.swift */; };
+		44B4A7B51DD35EFF00EC4EE5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B4A7B41DD35EFF00EC4EE5 /* MapViewController.swift */; };
 		44FCA7CD1DCE1D9200933ACC /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44FCA7CC1DCE1D9200933ACC /* Login.storyboard */; };
 		44FCA7CF1DCE1F8700933ACC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCA7CE1DCE1F8700933ACC /* LoginViewController.swift */; };
 		44FCA7D31DCE220B00933ACC /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCA7D21DCE220B00933ACC /* NetworkModel.swift */; };
 		44FCA7D51DCE23C200933ACC /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCA7D41DCE23C200933ACC /* WebServices.swift */; };
 		44FCA7D71DCE248400933ACC /* WebServicesExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCA7D61DCE248400933ACC /* WebServicesExtension.swift */; };
-		44FCA7DA1DCE2AF300933ACC /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCA7D91DCE2AF300933ACC /* Test.swift */; };
 		44FCA7DC1DCE2C7800933ACC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCA7DB1DCE2C7800933ACC /* Constants.swift */; };
 		44FCA7DE1DCF9F8700933ACC /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCA7DD1DCF9F8700933ACC /* Account.swift */; };
 		6995F5831071BB440B910429 /* Pods_PeopleMon2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA9C1A96EC60F02051159B1B /* Pods_PeopleMon2.framework */; };
@@ -41,6 +41,7 @@
 		44AF6BF91DCE168100DF4FDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44AF6BFB1DCE168100DF4FDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44B4A7B21DD2B06D00EC4EE5 /* UserListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserListViewController.swift; path = StoryBoards/ViewControllers/UserListViewController.swift; sourceTree = "<group>"; };
+		44B4A7B41DD35EFF00EC4EE5 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = StoryBoards/ViewControllers/MapViewController.swift; sourceTree = "<group>"; };
 		44FCA7CC1DCE1D9200933ACC /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		44FCA7CE1DCE1F8700933ACC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = StoryBoards/ViewControllers/LoginViewController.swift; sourceTree = "<group>"; };
 		44FCA7D21DCE220B00933ACC /* NetworkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkModel.swift; path = Networking/NetworkModel.swift; sourceTree = "<group>"; };
@@ -151,6 +152,7 @@
 				44FCA7CE1DCE1F8700933ACC /* LoginViewController.swift */,
 				44A0B31E1DD14413006C501B /* RegisterViewController.swift */,
 				44B4A7B21DD2B06D00EC4EE5 /* UserListViewController.swift */,
+				44B4A7B41DD35EFF00EC4EE5 /* MapViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -304,9 +306,9 @@
 				44A0B31F1DD14413006C501B /* RegisterViewController.swift in Sources */,
 				44FCA7D51DCE23C200933ACC /* WebServices.swift in Sources */,
 				44FCA7CF1DCE1F8700933ACC /* LoginViewController.swift in Sources */,
-				44FCA7DA1DCE2AF300933ACC /* Test.swift in Sources */,
 				44FCA7DE1DCF9F8700933ACC /* Account.swift in Sources */,
 				44FCA7D71DCE248400933ACC /* WebServicesExtension.swift in Sources */,
+				44B4A7B51DD35EFF00EC4EE5 /* MapViewController.swift in Sources */,
 				44AF6BF01DCE168100DF4FDC /* AppDelegate.swift in Sources */,
 				44B4A7B31DD2B06D00EC4EE5 /* UserListViewController.swift in Sources */,
 				44A0B31D1DD0D07F006C501B /* User.swift in Sources */,

@@ -29,7 +29,7 @@
         <!--login-->
         <scene sceneID="cUT-dY-dcP">
             <objects>
-                <viewController storyboardIdentifier="login" title="login" id="Fo6-RZ-EyU" customClass="LoginViewController" customModule="PeopleMon2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="login" id="Fo6-RZ-EyU" customClass="LoginViewController" customModule="PeopleMon2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BLK-Ms-2lM"/>
                         <viewControllerLayoutGuide type="bottom" id="Bzx-dF-XO3"/>

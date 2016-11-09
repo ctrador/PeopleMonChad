@@ -47,11 +47,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     }
     func locationManager(_ manager:CLLocationManager, didUpdateLocations locations: [CLLocation]){
         
-        if updateLocation < 4 {
+      //  if updateLocation < 4 {
             let myArea = MKCoordinateRegionMakeWithDistance(self.locationManager.location!.coordinate, 1000, 1000)
             self.mapView.setRegion(myArea, animated: true)
-        }
-        updateLocation += 1
+        //}
+    //    updateLocation += 1
     }
     
     override func didReceiveMemoryWarning() {

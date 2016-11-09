@@ -13,7 +13,7 @@ class UserStore {
     static let shared = UserStore()
     private init() {}
     
-    func loging(_ loginUser: Account, completion:@escaping(_ succes:Bool, _ error: String?) -> Void) {
+    func loging(_ loginUser: User, completion:@escaping(_ succes:Bool, _ error: String?) -> Void) {
         
         //call web service to login
        WebServices.shared.authUser(loginUser) { (user, error) in

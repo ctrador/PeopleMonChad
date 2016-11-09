@@ -94,11 +94,12 @@ class Account: NetworkModel {
         
     }
     // sample to init enums
-    init(email: String, fullName: String, avatarBase64: String, password: String) {
+    init(fullName: String, password: String, email: String, avatarBase64: String, apiKey: String) {
         self.email = email
+        self.password = password
         self.fullName = fullName
         self.avatarBase64 = avatarBase64
-        self.password = password
+        self.apiKey = Constants.ApiKey
          requestType = .register
     }
     
@@ -133,6 +134,8 @@ class Account: NetworkModel {
         switch requestType {
         case .userInfo:
             return .post
+        case .register:
+            return .post
         default:
             return .get
         }
@@ -150,7 +153,7 @@ class Account: NetworkModel {
         case .setPassword:
             return "/api/Account/setPassword"
         case .register:
-            return "/api/Account/registerAccount"
+            return "/api/Account/Register"
         case .login:
             return "/token"
         }
@@ -179,8 +182,19 @@ class Account: NetworkModel {
             params[Constants.Account.password] = password as AnyObject?
             params[Constants.Account.token] = token as AnyObject?
             params[Constants.Account.expiration] = expiration as AnyObject?
+            return params
+            
+        case .register:
+            var params: [String: AnyObject] = [:]
+            
+            params[Constants.Account.fullName] = fullName as AnyObject
+            params[Constants.Account.email] = email as AnyObject?
+            params[Constants.Account.password] = password as AnyObject?
+            params[Constants.Account.avatarBase64] = avatarBase64 as AnyObject?
+            params[Constants.Account.ApiKey] = apiKey as AnyObject?
             
             return params
+            
         default:
             return nil
         }

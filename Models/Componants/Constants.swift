@@ -17,8 +17,8 @@ struct Constants {
     public static let keychainIdentifier = "PeopleMonKeychain"
     public static let authTokenExpireDate = "authTokenExpireDate"
     public static let authToken = "authToken"
-    public static let apiKey = "ApiKey"
-    public static let ApiKey = "iOS301november2016"
+    //public static let apiKey = "ApiKey"
+    public static let ApiKey = "iOSandroid301november2016"
     public static let grantType = "password"
   
     
@@ -48,7 +48,7 @@ struct Constants {
         static let token = "access_token"
         static let expiration = ".expires"
         static let userName = "userName"
-
+        
     }
     
     
@@ -56,7 +56,7 @@ struct Constants {
     // Step 10: User Constants
     struct User {
         static let userId = "user_id"
-        static let userName = "user_name"
+        static let userName = "username"
         static let avatarBase64 = "avatar_base_64"
         static let longitude = "longitude"
         static let latitude = "latitude"
@@ -76,8 +76,10 @@ struct Constants {
         static let message = "message"
         static let recipientUserId = " recipient_user_id"
         static let senderUserId = "sender_user_id"
-        static let token = "token"
-        static let expirationDate = "expiration"
+        static let token = "access_token"
+        static let expirationDate = ".expires"
+        static let grantType = "grant_type"
+        static let password = "password"
         
     }
     

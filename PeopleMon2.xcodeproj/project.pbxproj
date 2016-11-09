@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4483E8EC1DD3850F00F42565 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4483E8EB1DD3850F00F42565 /* MapKit.framework */; };
 		44A0B31D1DD0D07F006C501B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A0B31C1DD0D07F006C501B /* User.swift */; };
 		44A0B31F1DD14413006C501B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A0B31E1DD14413006C501B /* RegisterViewController.swift */; };
 		44A0B3211DD149FA006C501B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A0B3201DD149FA006C501B /* Utils.swift */; };
@@ -29,6 +30,8 @@
 
 /* Begin PBXFileReference section */
 		2825931A99CD9FF320EF2711 /* Pods-PeopleMon2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeopleMon2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PeopleMon2/Pods-PeopleMon2.debug.xcconfig"; sourceTree = "<group>"; };
+		4483E8EA1DD3841200F42565 /* PeopleMon2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PeopleMon2.entitlements; sourceTree = "<group>"; };
+		4483E8EB1DD3850F00F42565 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		44A0B31C1DD0D07F006C501B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
 		44A0B31E1DD14413006C501B /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = StoryBoards/ViewControllers/RegisterViewController.swift; sourceTree = "<group>"; };
 		44A0B3201DD149FA006C501B /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = Models/Componants/Utils.swift; sourceTree = "<group>"; };
@@ -60,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4483E8EC1DD3850F00F42565 /* MapKit.framework in Frameworks */,
 				6995F5831071BB440B910429 /* Pods_PeopleMon2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,6 +83,7 @@
 		127771AF803EDF2B5A90D715 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4483E8EB1DD3850F00F42565 /* MapKit.framework */,
 				CA9C1A96EC60F02051159B1B /* Pods_PeopleMon2.framework */,
 			);
 			name = Frameworks;
@@ -108,6 +113,7 @@
 		44AF6BEE1DCE168100DF4FDC /* PeopleMon2 */ = {
 			isa = PBXGroup;
 			children = (
+				4483E8EA1DD3841200F42565 /* PeopleMon2.entitlements */,
 				44FCA7D11DCE20E900933ACC /* Networking */,
 				44AF6BEF1DCE168100DF4FDC /* AppDelegate.swift */,
 				44AF6BF61DCE168100DF4FDC /* Assets.xcassets */,
@@ -213,7 +219,16 @@
 				TargetAttributes = {
 					44AF6BEB1DCE168100DF4FDC = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = J9ZNEG6M25;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -440,6 +455,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PeopleMon2/PeopleMon2.entitlements;
+				DEVELOPMENT_TEAM = J9ZNEG6M25;
 				INFOPLIST_FILE = PeopleMon2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Interapt.PeopleMon2;
@@ -454,6 +471,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PeopleMon2/PeopleMon2.entitlements;
+				DEVELOPMENT_TEAM = J9ZNEG6M25;
 				INFOPLIST_FILE = PeopleMon2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Interapt.PeopleMon2;

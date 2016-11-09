@@ -39,8 +39,8 @@ class User: NetworkModel{
     var message: String?
     var recipientUserId: String?
     var senderUserId: String?
-    
-    
+    var password: String?
+    var grantType: String?
     // var messages = [recipientName, senderName, messageId, message, created, recipientUserId, senderUserId]
     enum RequestType {
         case checkIn
@@ -131,15 +131,18 @@ class User: NetworkModel{
         requestType = .caught
     }
     init(grantType: String, userName: String, password: String){
-     //   self.grantType = grantType
+       self.grantType = grantType
         self.userName = userName
-     //   self.password = password
+       self.password = password
+        requestType = .login
     }
     
     // Always return HTTP.GET
     func method() -> Alamofire.HTTPMethod {
         switch requestType {
         case .conversation:
+            return .post
+        case .login:
             return .post
         default:
             return .get
@@ -158,7 +161,7 @@ class User: NetworkModel{
         case .userNearby:
             return "/v1/user/Nearby"
         case .login:
-            return "/auth"
+            return "/token"
         default:
             return "peopleMon.api"
         }
@@ -167,6 +170,7 @@ class User: NetworkModel{
     func toDictionary() -> [String: AnyObject]? {
         switch requestType {
         case .conversation:
+    
             //let startDate = Utils.adjustedTime().toString(.iso8601(nil))
             
             var params: [String: AnyObject] = [:]
@@ -185,6 +189,12 @@ class User: NetworkModel{
             params[Constants.User.recipientAvatarBase64] = recipientAvatarBase64 as AnyObject?
             params[Constants.User.count] = count as AnyObject?
             // params[Constants.User.messages] = messages as AnyObject?
+            return params
+        case .login:
+            var params: [String: AnyObject] = [:]
+            params[Constants.User.grantType] = grantType as AnyObject?
+            params[Constants.User.userName] = userName as AnyObject?
+            params[Constants.User.password] = password as AnyObject?
             return params
         default:
             return nil

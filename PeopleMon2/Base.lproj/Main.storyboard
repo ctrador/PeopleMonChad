@@ -35,6 +35,7 @@
                     </mapView>
                     <navigationItem key="navigationItem" id="NPp-fs-zaB"/>
                     <connections>
+                        <outlet property="mapView" destination="vSo-vF-k90" id="s5s-gC-Kn9"/>
                         <segue destination="e3E-Rs-prJ" kind="presentation" identifier="PresentLoginNoAnimation" animates="NO" id="KFB-Bf-1Al"/>
                         <segue destination="e3E-Rs-prJ" kind="presentation" identifier="PresentLogin" id="0qG-fL-IPD"/>
                     </connections>
@@ -53,6 +54,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="0qG-fL-IPD"/>
+        <segue reference="KFB-Bf-1Al"/>
     </inferredMetricsTieBreakers>
 </document>

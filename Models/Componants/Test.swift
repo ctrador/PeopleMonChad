@@ -5,7 +5,7 @@
 //  Created by Chad Trador on 11/5/16.
 //  Copyright © 2016 Chad Trador. All rights reserved.
 //
-
+/*
 import Foundation
 import Alamofire
 import Freddy
@@ -89,4 +89,6 @@ class Test: NetworkModel  {
 
 
 
+*/
 
+ 

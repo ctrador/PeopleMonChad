@@ -11,24 +11,16 @@ import Foundation
 
 struct Constants {
     // Step 16: Add monthDayYear
-    static let monthDayYear = "MM/dd/yyyy"
+   // static let monthDayYear = "MM/dd/yyyy"
     
     // Step 7: Add keychain strings
     public static let keychainIdentifier = "PeopleMonKeychain"
     public static let authTokenExpireDate = "authTokenExpireDate"
     public static let authToken = "authToken"
-    
-    // Step 19: Add Notification constant
-    static let newExpensesFound = "NewExpensesFound"
-    
-    // Step 3: Create Test Model Constants
-    // MARK: Test Model
-    struct Test {
-        static let userId = "userId"
-        static let id = "id"
-        static let title = "title"
-        static let body = "body"
-    }
+    public static let apiKey = "ApiKey"
+    public static let ApiKey = "iOS301november2016"
+    public static let grantType = "password"
+  
     
     // Step 4: JSON Constants
     struct JSON {
@@ -38,20 +30,25 @@ struct Constants {
     
     // Step 9: BudgetUser Constants
     struct Account {
-        static let id = "id"
-        static let email = "email"
-        static let hasRegistered = "has_registered"
-        static let loginPrivider = "login_privider"
-        static let fullName = "full_name"
-        static let avatarBase64 = "Avatar_base_64"
-        static let lastCheckInLongitude = "last_checkin_longitude"
-        static let lastCheckInLatitude = "last_checkin_latitude"
-        static let lastCheckInDateTime = "last_checin_date_time"
-        static let authorization = "authorization"
-        static let oldPassword = "old_password"
-        static let newPassword = "new_password"
-        static let confirmPassword = "confirm_password"
-        static let password = "password"
+        static let id = "Id"
+        static let email = "Email"
+        static let hasRegistered = "HasRegistered"
+        static let loginPrivider = "LoginPrivider"
+        static let fullName = "FullName"
+        static let avatarBase64 = "AvatarBase64"
+        static let lastCheckInLongitude = "LastCheckInLongitude"
+        static let lastCheckInLatitude = "LastCheckInLatitude"
+        static let lastCheckInDateTime = "LastChecInDateTime"
+        static let authorization = "Authorization"
+        static let oldPassword = "OldPassword"
+        static let newPassword = "NewPassword"
+        static let confirmPassword = "ConfirmPassword"
+        static let ApiKey = "ApiKey"
+        static let password = "Password"
+        static let token = "access_token"
+        static let expiration = ".expires"
+        static let userName = "userName"
+
     }
     
     
@@ -79,6 +76,8 @@ struct Constants {
         static let message = "message"
         static let recipientUserId = " recipient_user_id"
         static let senderUserId = "sender_user_id"
+        static let token = "token"
+        static let expirationDate = "expiration"
         
     }
     

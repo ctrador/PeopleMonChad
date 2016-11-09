@@ -5,32 +5,29 @@
 //  Created by Chad Trador on 11/7/16.
 //  Copyright © 2016 Chad Trador. All rights reserved.
 //
-/*
+
 import UIKit
 import MBProgressHUD
 
 
 class RegisterViewController: UIViewController {
-
-    @IBOutlet weak var email: UITextField!
     
-    @IBOutlet weak var fullName: UITextField!
+    @IBOutlet weak var fullNameTextField: UITextField!
     
-    @IBOutlet weak var avatarBase64: UITextField!
+    @IBOutlet weak var eMailTextFeild: UITextField!
     
-    @IBOutlet weak var apiKey: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
-    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var confirmPasswordTextField: UITextField!
     
-    @IBOutlet weak var confirmPassword: UITextField!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -39,29 +36,30 @@ class RegisterViewController: UIViewController {
     
     
     @IBAction func regester(_ sender: Any) {
-    
         
-        guard let fullName = fullName.text, fullName != "" else {
+        let avatarBase64 = "chad"
+        
+        guard let fullName = fullNameTextField.text, fullName != "" else {
             let alert = Utils.createAlert("login Error", message:  "Please provide a username", dismissButtonTitle: "Close")
             present(alert, animated:  true, completion: nil)
             
             return
             
         }
-        guard let email = email.text, email != "" && Utils.isValidEmail(email) else {
+        guard let email = eMailTextFeild.text, email != "" && Utils.isValidEmail(email) else {
             let alert = Utils.createAlert("login Error", message:  "Please provide a Valid Email", dismissButtonTitle: "Close")
             present(alert, animated:  true, completion: nil)
             
             return
         }
-        guard let password = password.text, password != "" else {
+        guard let password = passwordTextField.text, password != "" else {
             let alert = Utils.createAlert("login Error", message:  "Please provide a Password", dismissButtonTitle: "Close")
             present(alert, animated:  true, completion: nil)
             
             return
         }
         
-        guard let confirm = confirmPassword.text, password == confirm else {
+        guard let confirm = confirmPasswordTextField.text, password == confirm else {
             let alert = Utils.createAlert("login Error", message:  "Passwords do not match", dismissButtonTitle: "Close")
             present(alert, animated:  true, completion: nil)
             
@@ -71,16 +69,17 @@ class RegisterViewController: UIViewController {
         
         // going to go ahead with the register
         MBProgressHUD.showAdded(to: view, animated: true)
-        
-        let user = (email: email, fullName: fullName, password: password)
+    
+       // let user = Account(email: email, fullName: fullName, avatarBase64: avatarBase64, password: password)
+        let user = Account(email: email, fullName: fullName, avatarBase64: avatarBase64, password: password)
         
         UserStore.shared.register(user) { (succcess, error) in
             MBProgressHUD.hide(for: self.view, animated: true)
             
-            if succcess {
+           if succcess {
                 self.dismiss(animated: true, completion: nil)
             }else  if let error = error {
-                self.present(Utils.createAlert(message: error), animated: true, completion: nil)
+               self.present(Utils.createAlert(message: error), animated: true, completion: nil)
             }else {
                 self.present(Utils.createAlert(message: Constants.JSON.unknownError), animated: true, completion: nil)
             }
@@ -98,4 +97,4 @@ class RegisterViewController: UIViewController {
      */
     
 }
-*/
+

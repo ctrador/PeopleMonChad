@@ -5,7 +5,7 @@
 //  Created by Chad Trador on 11/5/16.
 //  Copyright © 2016 Chad Trador. All rights reserved.
 //
-
+/*
 import Alamofire
 import UIKit
 import Freddy
@@ -94,5 +94,5 @@ class ViewController: UIViewController {
 //        // Dispose of any resources that can be recreated.
 //    }
 
-
+*/
 

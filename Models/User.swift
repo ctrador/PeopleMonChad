@@ -12,6 +12,8 @@ import Freddy
 
 class User: NetworkModel{
     
+    var token : String?
+    var expiration : String?
     var userId: String?
     var userName: String?
     var avatarBase64: String?
@@ -45,7 +47,8 @@ class User: NetworkModel{
         case userCatch
         case conversation
         case userNearby
-        
+        case login
+        case caught
     }
     var requestType = RequestType.conversation
     
@@ -73,6 +76,8 @@ class User: NetworkModel{
         message = try? json.getString(at: Constants.User.message)
         recipientUserId = try? json.getString(at: Constants.User.recipientUserId)
         senderUserId = try? json.getString(at: Constants.User.senderUserId)
+        token = try? json.getString(at: Constants.User.token)
+        expiration = try? json.getString(at: Constants.User.expirationDate)
         
     }
     
@@ -96,16 +101,39 @@ class User: NetworkModel{
         self.count = count
     }
     
-    init(checkIn: String) {
+    init(longitude: Double , latitude: Double) {
+       self.longitude = longitude
+        self.latitude = latitude
         requestType = .checkIn
+        
     }
     
-    init(userCatch: String) {
+    init(caughtUserId: String, radiusInMeters: Int) {
+        self.caughtUserId = caughtUserId
+        self.radiusInMeters = radiusInMeters
         requestType = .userCatch
     }
     
-    init(userNearby: Int) {
+    init(userId: String, userName: String, avatarBase64: String, longitude: Int, latitude: Int,created: String){
+        self.userId = userId
+        self.userName = userName
+        self.avatarBase64 = avatarBase64
+        //self.longitude = longitude
+       // self.latitude = latitude
+        self.created = created
         requestType = .userNearby
+    }
+    init(userId: String, userName: String, created: String, avatarBase64: String){
+        self.userId = userId
+        self.userName = userName
+        self.created = created
+        self.avatarBase64 = avatarBase64
+        requestType = .caught
+    }
+    init(grantType: String, userName: String, password: String){
+     //   self.grantType = grantType
+        self.userName = userName
+     //   self.password = password
     }
     
     // Always return HTTP.GET
@@ -129,7 +157,10 @@ class User: NetworkModel{
             return "/v1/user/catch"
         case .userNearby:
             return "/v1/user/Nearby"
-            
+        case .login:
+            return "/auth"
+        default:
+            return "peopleMon.api"
         }
     }
     // Demo object isn't being posted to a server, so just return nil

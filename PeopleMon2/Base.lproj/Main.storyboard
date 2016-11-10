@@ -40,7 +40,13 @@
                                 <rect key="frame" x="16" y="7" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Check In"/>
+                                <connections>
+                                    <action selector="checkInTapped:" destination="OEf-5J-7pA" eventType="touchUpInside" id="Axa-bx-L3w"/>
+                                </connections>
                             </button>
+                            <connections>
+                                <action selector="checkIn:" destination="OEf-5J-7pA" id="ufk-CI-LY1"/>
+                            </connections>
                         </barButtonItem>
                         <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="QBW-qZ-gPG">
                             <rect key="frame" x="96" y="7" width="128" height="30"/>
@@ -64,6 +70,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="checkInButton" destination="Iye-de-Wvb" id="qyR-5W-XQb"/>
                         <outlet property="mapView" destination="vSo-vF-k90" id="s5s-gC-Kn9"/>
                         <segue destination="e3E-Rs-prJ" kind="presentation" identifier="PresentLoginNoAnimation" animates="NO" id="KFB-Bf-1Al"/>
                         <segue destination="e3E-Rs-prJ" kind="presentation" identifier="PresentLogin" id="0qG-fL-IPD"/>
@@ -153,7 +160,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="346"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="POT-W1-a1N" id="rha-Uq-OST">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="345"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="345.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User Id" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZNe-0a-hzW">

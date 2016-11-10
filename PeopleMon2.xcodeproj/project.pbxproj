@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4452CE891DD4AC46006CE9F9 /* MapPins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452CE881DD4AC46006CE9F9 /* MapPins.swift */; };
 		4483E8EC1DD3850F00F42565 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4483E8EB1DD3850F00F42565 /* MapKit.framework */; };
 		44A0B31D1DD0D07F006C501B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A0B31C1DD0D07F006C501B /* User.swift */; };
 		44A0B31F1DD14413006C501B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A0B31E1DD14413006C501B /* RegisterViewController.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		2825931A99CD9FF320EF2711 /* Pods-PeopleMon2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeopleMon2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PeopleMon2/Pods-PeopleMon2.debug.xcconfig"; sourceTree = "<group>"; };
+		4452CE881DD4AC46006CE9F9 /* MapPins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapPins.swift; path = Models/Componants/MapPins.swift; sourceTree = "<group>"; };
 		4483E8EA1DD3841200F42565 /* PeopleMon2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PeopleMon2.entitlements; sourceTree = "<group>"; };
 		4483E8EB1DD3850F00F42565 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		44A0B31C1DD0D07F006C501B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
@@ -51,7 +53,6 @@
 		44FCA7D41DCE23C200933ACC /* WebServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebServices.swift; path = Networking/WebServices.swift; sourceTree = "<group>"; };
 		44FCA7D61DCE248400933ACC /* WebServicesExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebServicesExtension.swift; path = Networking/WebServicesExtension.swift; sourceTree = "<group>"; };
 		44FCA7D81DCE284600933ACC /* PeopleMonBridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PeopleMonBridging-header.h"; sourceTree = "<group>"; };
-		44FCA7D91DCE2AF300933ACC /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Test.swift; path = Models/Componants/Test.swift; sourceTree = "<group>"; };
 		44FCA7DB1DCE2C7800933ACC /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Models/Componants/Constants.swift; sourceTree = "<group>"; };
 		44FCA7DD1DCF9F8700933ACC /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Account.swift; path = Models/Account.swift; sourceTree = "<group>"; };
 		CA9C1A96EC60F02051159B1B /* Pods_PeopleMon2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PeopleMon2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,10 +167,10 @@
 		44FCA7D01DCE209D00933ACC /* Componants */ = {
 			isa = PBXGroup;
 			children = (
-				44FCA7D91DCE2AF300933ACC /* Test.swift */,
 				44FCA7DB1DCE2C7800933ACC /* Constants.swift */,
 				44A0B3201DD149FA006C501B /* Utils.swift */,
 				44A0B3221DD14B31006C501B /* UserStore.swift */,
+				4452CE881DD4AC46006CE9F9 /* MapPins.swift */,
 			);
 			name = Componants;
 			sourceTree = "<group>";
@@ -319,6 +320,7 @@
 			files = (
 				44FCA7D31DCE220B00933ACC /* NetworkModel.swift in Sources */,
 				44A0B31F1DD14413006C501B /* RegisterViewController.swift in Sources */,
+				4452CE891DD4AC46006CE9F9 /* MapPins.swift in Sources */,
 				44FCA7D51DCE23C200933ACC /* WebServices.swift in Sources */,
 				44FCA7CF1DCE1F8700933ACC /* LoginViewController.swift in Sources */,
 				44FCA7DE1DCF9F8700933ACC /* Account.swift in Sources */,

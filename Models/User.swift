@@ -151,6 +151,8 @@ class User: NetworkModel{
             return .post
         case .userCatch:
             return .post
+        case .checkIn:
+            return .post
         default:
             return .get
         }
@@ -207,6 +209,13 @@ class User: NetworkModel{
              var params: [String: AnyObject] = [:]
             params[Constants.User.userId] = userId as AnyObject?
             params[Constants.User.radiusInMeters] = radiusInMeters as AnyObject?
+            params[Constants.User.token] = token as AnyObject?
+        return params
+            
+        case .checkIn:
+            var params: [String: AnyObject] = [:]
+            params[Constants.User.longitude] = longitude as AnyObject?
+            params[Constants.User.latitude] = latitude as AnyObject?
             params[Constants.User.token] = token as AnyObject?
             return params
         default:

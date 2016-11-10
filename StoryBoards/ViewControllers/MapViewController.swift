@@ -12,13 +12,15 @@ import MBProgressHUD
 import CoreLocation
 
 class MapViewController: UIViewController, CLLocationManagerDelegate {
+   
+    @IBOutlet weak var checkInButton: UIButton!
     
     @IBOutlet weak var mapView: MKMapView!
     
     
     let locationManager = CLLocationManager()
     var updateLocation = 0
-  //  var peopleNearby = [MapPin]()
+    //var peopleNearby = [MapPin]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,24 +51,24 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        //print("view appeared")
+        
         if !WebServices.shared.userAuthTokenExists() || WebServices.shared.userAuthTokenExpired(){
             performSegue(withIdentifier: "PresentLoginNoAnimation", sender: self)
-            //print("I got here")
+            
         }
     }
-//    func loadpeopleNearby(){
-//        let peopleNearby = Person(radius: 100)
-//        WebServices.shared.getObjects(peopleNearby){
-//            (nearbyPeople, error) in
-//            if let nearbyPeople = nearbyPeople{
-//                for person in nearbyPeople {
-//                    let pin = MapPin(person: person)
-//                    self.peopleNearby.append(pin)
-//                }
-//            }
-//        }
-//    }
+    //    func loadpeopleNearby(){
+    //        let peopleNearby = Person(radius: 100)
+    //        WebServices.shared.getObjects(peopleNearby){
+    //            (nearbyPeople, error) in
+    //            if let nearbyPeople = nearbyPeople{
+    //                for person in nearbyPeople {
+    //                    let pin = MapPin(person: person)
+    //                    self.peopleNearby.append(pin)
+    //                }
+    //            }
+    //        }
+    //    }
     //Mark - @IBActions
     @IBAction func logout(_ sender: Any) {
         UserStore.shared.logout{
@@ -75,29 +77,28 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
-    @IBAction func CheckIn(_ sender: AnyObject) {
-        //get the location
+    
+    @IBAction func checkInTapped(_ sender: Any) {
+    
+   
         if let location = locationManager.location{
             
-            
-            
-            //create user object with that location
-    //        let person = Person(longitude: location.coordinate.longitude, latitude: location.coordinate.latitude)
+        let person = User(longitude: location.coordinate.longitude, latitude: location.coordinate.latitude)
             
             //call webservices .post with the user object
-//            WebServices.shared.postObject(person, completion: { (person, error) in
-//                if let error = error {
-//                    self.present(Utils.createAlert(message: error), animated: true, completion: nil)
-//                }else{
-//                    self.present(Utils.createAlert("Awesome!", message: "You are Checked In"),  animated: true, completion: nil)
-//                    
-//                }
-//                
-//            })
-//            
-//            
-//        }
-//        
+            WebServices.shared.postObject(person, completion: { (person, error) in
+                if let error = error {
+                    self.present(Utils.createAlert(message: error), animated: true, completion: nil)
+                }else{
+                    self.present(Utils.createAlert("Great!", message: "You are Checked In"),  animated: true, completion: nil)
+                    
+                }
+                
+            })
+            
+            
+        }
+        
         /*
          // MARK: - Navigation
          
@@ -111,4 +112,3 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     }
 }
 
-}

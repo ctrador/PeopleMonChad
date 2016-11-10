@@ -18,6 +18,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
     var updateLocation = 0
+  //  var peopleNearby = [MapPin]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,29 +30,16 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             self.mapView.showsUserLocation = true
             self.locationManager.startUpdatingLocation()
             
-            Timer.scheduledTimer(withTimeInterval: 5, repeats: true, block: {(timer:Timer) in
-                
-                if let coordinate = self.locationManager.location?.coordinate{
-                    let annonation = MKPointAnnotation ()
-                    annonation.coordinate = coordinate
-                    
-                    annonation.coordinate.latitude += (Double(arc4random_uniform(1000)) - 500)/300000.0
-                    annonation.coordinate.longitude += (Double(arc4random_uniform(1000)) - 500)/300000.0
-                    self.mapView.addAnnotation(annonation)
-                }
-            })
             
         }else{
-            self .locationManager.requestWhenInUseAuthorization()
+            self.locationManager.requestWhenInUseAuthorization()
         }
     }
     func locationManager(_ manager:CLLocationManager, didUpdateLocations locations: [CLLocation]){
         
-      //  if updateLocation < 4 {
-            let myArea = MKCoordinateRegionMakeWithDistance(self.locationManager.location!.coordinate, 1000, 1000)
-            self.mapView.setRegion(myArea, animated: true)
-        //}
-    //    updateLocation += 1
+        let myArea = MKCoordinateRegionMakeWithDistance(self.locationManager.location!.coordinate, 1000, 1000)
+        self.mapView.setRegion(myArea, animated: true)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -67,6 +55,18 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             //print("I got here")
         }
     }
+//    func loadpeopleNearby(){
+//        let peopleNearby = Person(radius: 100)
+//        WebServices.shared.getObjects(peopleNearby){
+//            (nearbyPeople, error) in
+//            if let nearbyPeople = nearbyPeople{
+//                for person in nearbyPeople {
+//                    let pin = MapPin(person: person)
+//                    self.peopleNearby.append(pin)
+//                }
+//            }
+//        }
+//    }
     //Mark - @IBActions
     @IBAction func logout(_ sender: Any) {
         UserStore.shared.logout{
@@ -74,14 +74,41 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         }
         
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
+    @IBAction func CheckIn(_ sender: AnyObject) {
+        //get the location
+        if let location = locationManager.location{
+            
+            
+            
+            //create user object with that location
+    //        let person = Person(longitude: location.coordinate.longitude, latitude: location.coordinate.latitude)
+            
+            //call webservices .post with the user object
+//            WebServices.shared.postObject(person, completion: { (person, error) in
+//                if let error = error {
+//                    self.present(Utils.createAlert(message: error), animated: true, completion: nil)
+//                }else{
+//                    self.present(Utils.createAlert("Awesome!", message: "You are Checked In"),  animated: true, completion: nil)
+//                    
+//                }
+//                
+//            })
+//            
+//            
+//        }
+//        
+        /*
+         // MARK: - Navigation
+         
+         // In a storyboard-based application, you will often want to do a little preparation before navigation
+         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         // Get the new view controller using segue.destinationViewController.
+         // Pass the selected object to the new view controller.
+         }
+         */
+        
+    }
+}
+
 }

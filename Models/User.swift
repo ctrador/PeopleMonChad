@@ -41,6 +41,7 @@ class User: NetworkModel{
     var senderUserId: String?
     var password: String?
     var grantType: String?
+   
     // var messages = [recipientName, senderName, messageId, message, created, recipientUserId, senderUserId]
     enum RequestType {
         case checkIn
@@ -78,10 +79,11 @@ class User: NetworkModel{
         senderUserId = try? json.getString(at: Constants.User.senderUserId)
         token = try? json.getString(at: Constants.User.token)
         expiration = try? json.getString(at: Constants.User.expirationDate)
-        
+        radiusInMeters = try? json.getInt(at: Constants.User.radiusInMeters)
+        token = try? json.getString(at: Constants.User.token)
     }
     
-    init(userId: String, userName: String, avatarBase64: String, longitude: Double, latitude: Double, created: String, conversationId: Int, recipientId: String, recipientName: String, lastMessage: String, messageCount: Int, senderId: String, senderName: String,recipientAvatarBase64: String, senderAvatarBase64: String, count: Int) {
+    init(userId: String, userName: String, avatarBase64: String, longitude: Double, latitude: Double, created: String, conversationId: Int, recipientId: String, recipientName: String, lastMessage: String, messageCount: Int, senderId: String, senderName: String,recipientAvatarBase64: String, senderAvatarBase64: String, count: Int, radiusInMeters: Int, token: String) {
         self.userId = userId
         self.userName = userName
         self.avatarBase64 = avatarBase64
@@ -99,6 +101,8 @@ class User: NetworkModel{
         self.recipientAvatarBase64 = recipientAvatarBase64
         self.senderAvatarBase64 = senderAvatarBase64
         self.count = count
+        self.radiusInMeters = radiusInMeters
+        self.token = token
     }
     
     init(longitude: Double , latitude: Double) {
@@ -111,6 +115,7 @@ class User: NetworkModel{
     init(caughtUserId: String, radiusInMeters: Int) {
         self.caughtUserId = caughtUserId
         self.radiusInMeters = radiusInMeters
+       // self.token = token
         requestType = .userCatch
     }
     
@@ -143,6 +148,8 @@ class User: NetworkModel{
         case .conversation:
             return .post
         case .login:
+            return .post
+        case .userCatch:
             return .post
         default:
             return .get
@@ -195,6 +202,12 @@ class User: NetworkModel{
             params[Constants.User.grantType] = grantType as AnyObject?
             params[Constants.User.userName] = userName as AnyObject?
             params[Constants.User.password] = password as AnyObject?
+            return params
+        case .userCatch:
+             var params: [String: AnyObject] = [:]
+            params[Constants.User.userId] = userId as AnyObject?
+            params[Constants.User.radiusInMeters] = radiusInMeters as AnyObject?
+            params[Constants.User.token] = token as AnyObject?
             return params
         default:
             return nil

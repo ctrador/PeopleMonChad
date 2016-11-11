@@ -70,7 +70,6 @@ class RegisterViewController: UIViewController {
         // going to go ahead with the register
         MBProgressHUD.showAdded(to: view, animated: true)
     
-       // let user = Account(email: email, fullName: fullName, avatarBase64: avatarBase64, password: password)
         let user = Account(fullName: fullName, password: password, email: email, avatarBase64: "chad", apiKey: Constants.ApiKey )
         
         UserStore.shared.register(user) { (succcess, error) in

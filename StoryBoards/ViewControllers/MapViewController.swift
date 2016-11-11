@@ -29,10 +29,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     
     override func viewDidLoad() {
-        //super.viewDidLoad()
-        //print("view loaded")
-        // Do any additional setup after loading the view.
-        //self.locationManager.delegate = self
+        super.viewDidLoad()
+        
+        
+        
+        self.locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.distanceFilter = kCLDistanceFilterNone
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -90,6 +91,19 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         }
         
     }
+    
+    
+    @IBAction func mapType(_ sender: Any) {
+        if mapView.mapType == MKMapType.standard {
+            mapView.mapType = MKMapType.satellite
+        } else {
+            mapView.mapType = MKMapType.standard
+        }
+    } 
+    
+    
+    
+    
     
     @IBAction func snowProfile(_ sender: Any) {
         

@@ -8,10 +8,24 @@
 
 import Foundation
 
+
+protocol UserStoreDelegate: class {
+    func userLoggedIn()
+}
+
+
 class UserStore {
     // singleton
     static let shared = UserStore()
     private init() {}
+    var account: Account? {
+        didSet {
+            if let _ = account {
+                delegate?.userLoggedIn()
+            }
+        }
+    }
+    weak var delegate: UserStoreDelegate?
     
     func loging(_ loginUser: User, completion:@escaping(_ succes:Bool, _ error: String?) -> Void) {
         
@@ -42,13 +56,25 @@ class UserStore {
         }
     }
     
-    func logout(_ completion:()-> ()) {
-        WebServices.shared.clearUserAuthToken()
-        completion()
-        
+    func getUserInfo(infoUser: Account, completion:@escaping (_ success: Bool, _ error: String?) -> Void) {
+        infoUser.requestType = Account.RequestType.userInfo
+        WebServices.shared.getObject(infoUser) { (user, error) in
+            if let account = self.account {
+                self.account = account
+                completion(true, nil)
+            } else {
+                completion(false, error)
+            }
+        }
     }
     
+    func logout(completion:@escaping () -> Void) {
+        let logoutUser = Account()
+        logoutUser.requestType = Account.RequestType.logout
+        WebServices.shared.postObject(logoutUser) { (object, error) in
+            WebServices.shared.clearUserAuthToken()
+            completion()
+        }
+    }
 }
-
-
 

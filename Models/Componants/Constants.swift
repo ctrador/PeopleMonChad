@@ -20,7 +20,7 @@ struct Constants {
     //public static let apiKey = "ApiKey"
     public static let ApiKey = "iOSandroid301november2016"
     public static let grantType = "password"
-  
+    public static let radius = 100.0
     
     // Step 4: JSON Constants
     struct JSON {
@@ -81,22 +81,19 @@ struct Constants {
         static let expirationDate = ".expires"
         static let grantType = "grant_type"
         static let password = "password"
-        
+        static let radius = "radiusInMeters"
     }
     
-    // Step 11: Expense Constants
-    struct Expense {
-        static let id = "id"
-        static let amount = "amount"
-        static let category = "category"
-        static let date = "date"
-        static let note = "note"
-        static let categoryId = "categoryId"
-        static let categoryName = "categoryName"
-        
-        // Step 19: Add month/year
-        static let month = "month"
-        static let year = "year"
+    // Step 11: People Constants
+    struct Person {
+        static let userId = "UserId"
+        static let userName = "UserName"
+        static let latitude = "Latitude"
+        static let longitude = "Longitude"
+        static let created = "Created"
+        static let radius = "radiusInMeters"
+        static let caughtUserId = "CaughtUserId"
+        static let avatarBase64 = "AvatarBase64"
     }
 }
 

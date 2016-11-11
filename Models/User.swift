@@ -5,7 +5,7 @@
 //  Created by Chad Trador on 11/7/16.
 //  Copyright © 2016 Chad Trador. All rights reserved.
 //
-
+import MapKit
 import Foundation
 import Alamofire
 import Freddy
@@ -20,7 +20,7 @@ class User: NetworkModel{
     var longitude: Double?
     var latitude: Double?
     var created: String?
-    var radiusInMeters: Int?
+    var radiusInMeters: Double?
     var authorization: String?
     var caughtUserId: String?
     var conversationId: Int?
@@ -41,7 +41,8 @@ class User: NetworkModel{
     var senderUserId: String?
     var password: String?
     var grantType: String?
-   
+    var radius: Double?
+    
     // var messages = [recipientName, senderName, messageId, message, created, recipientUserId, senderUserId]
     enum RequestType {
         case checkIn
@@ -79,11 +80,11 @@ class User: NetworkModel{
         senderUserId = try? json.getString(at: Constants.User.senderUserId)
         token = try? json.getString(at: Constants.User.token)
         expiration = try? json.getString(at: Constants.User.expirationDate)
-        radiusInMeters = try? json.getInt(at: Constants.User.radiusInMeters)
+        radiusInMeters = try? json.getDouble(at: Constants.User.radiusInMeters)
         token = try? json.getString(at: Constants.User.token)
     }
     
-    init(userId: String, userName: String, avatarBase64: String, longitude: Double, latitude: Double, created: String, conversationId: Int, recipientId: String, recipientName: String, lastMessage: String, messageCount: Int, senderId: String, senderName: String,recipientAvatarBase64: String, senderAvatarBase64: String, count: Int, radiusInMeters: Int, token: String) {
+    init(userId: String, userName: String, avatarBase64: String, longitude: Double, latitude: Double, created: String, conversationId: Int, recipientId: String, recipientName: String, lastMessage: String, messageCount: Int, senderId: String, senderName: String,recipientAvatarBase64: String, senderAvatarBase64: String, count: Int, radiusInMeters: Double, token: String) {
         self.userId = userId
         self.userName = userName
         self.avatarBase64 = avatarBase64
@@ -106,26 +107,28 @@ class User: NetworkModel{
     }
     
     init(longitude: Double , latitude: Double) {
-       self.longitude = longitude
+        self.longitude = longitude
         self.latitude = latitude
         requestType = .checkIn
         
     }
     
-    init(caughtUserId: String, radiusInMeters: Int) {
+    init(caughtUserId: String, radiusInMeters: Double, token: String) {
         self.caughtUserId = caughtUserId
         self.radiusInMeters = radiusInMeters
-       // self.token = token
+        self.token = token
         requestType = .userCatch
     }
     
-    init(userId: String, userName: String, avatarBase64: String, longitude: Int, latitude: Int,created: String){
+    init(userId: String, userName: String, avatarBase64: String, longitude: Double, latitude: Double, created: String, radiusInMeters: Double, token: String){
         self.userId = userId
         self.userName = userName
         self.avatarBase64 = avatarBase64
-        //self.longitude = longitude
-       // self.latitude = latitude
+        self.longitude = longitude
+        self.latitude = latitude
         self.created = created
+        self.radiusInMeters = radiusInMeters
+        self.token = token
         requestType = .userNearby
     }
     init(userId: String, userName: String, created: String, avatarBase64: String){
@@ -136,10 +139,21 @@ class User: NetworkModel{
         requestType = .caught
     }
     init(grantType: String, userName: String, password: String){
-       self.grantType = grantType
+        self.grantType = grantType
         self.userName = userName
-       self.password = password
+        self.password = password
         requestType = .login
+    }
+    init(radius: Double) {
+        self.radiusInMeters = radius
+        self.requestType = .userNearby
+        
+    }
+    init (coordinate : CLLocationCoordinate2D) {
+        self.longitude = coordinate.longitude
+        self.latitude = coordinate.latitude
+        self.requestType = .checkIn
+        
     }
     
     // Always return HTTP.GET
@@ -153,8 +167,11 @@ class User: NetworkModel{
             return .post
         case .checkIn:
             return .post
-        default:
+        case .userNearby:
             return .get
+        case .caught:
+            return .post
+
         }
         
     }
@@ -179,8 +196,6 @@ class User: NetworkModel{
     func toDictionary() -> [String: AnyObject]? {
         switch requestType {
         case .conversation:
-    
-            //let startDate = Utils.adjustedTime().toString(.iso8601(nil))
             
             var params: [String: AnyObject] = [:]
             params[Constants.User.userId] = userId as AnyObject?
@@ -197,7 +212,6 @@ class User: NetworkModel{
             params[Constants.User.senderName] = senderName as AnyObject?
             params[Constants.User.recipientAvatarBase64] = recipientAvatarBase64 as AnyObject?
             params[Constants.User.count] = count as AnyObject?
-            // params[Constants.User.messages] = messages as AnyObject?
             return params
         case .login:
             var params: [String: AnyObject] = [:]
@@ -206,17 +220,23 @@ class User: NetworkModel{
             params[Constants.User.password] = password as AnyObject?
             return params
         case .userCatch:
-             var params: [String: AnyObject] = [:]
+            var params: [String: AnyObject] = [:]
             params[Constants.User.userId] = userId as AnyObject?
             params[Constants.User.radiusInMeters] = radiusInMeters as AnyObject?
             params[Constants.User.token] = token as AnyObject?
-        return params
+            return params
             
         case .checkIn:
             var params: [String: AnyObject] = [:]
             params[Constants.User.longitude] = longitude as AnyObject?
             params[Constants.User.latitude] = latitude as AnyObject?
             params[Constants.User.token] = token as AnyObject?
+            return params
+            
+        case .userNearby:
+            var params: [String: AnyObject] = [:]
+            params[Constants.User.radiusInMeters] = radiusInMeters as AnyObject?
+            params[Constants.User.radius] = radius as AnyObject?
             return params
         default:
             return nil

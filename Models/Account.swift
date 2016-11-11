@@ -5,7 +5,7 @@
 //  Created by Chad Trador on 11/6/16.
 //  Copyright © 2016 Chad Trador. All rights reserved.
 //
-
+import UIKit
 import Foundation
 import Alamofire
 import Freddy
@@ -39,6 +39,7 @@ class Account: NetworkModel {
         case setPassword
         case register
         case login
+        case updateProfile
     }
     var requestType = RequestType.userInfo
     
@@ -133,7 +134,7 @@ class Account: NetworkModel {
     func method() -> Alamofire.HTTPMethod {
         switch requestType {
         case .userInfo:
-            return .post
+            return .get
         case .register:
             return .post
         default:
@@ -144,8 +145,8 @@ class Account: NetworkModel {
     // A sample path to a single post
     func path() -> String {
         switch requestType {
-        case .userInfo:
-            return "/api/Account/userInfo"
+        case .userInfo, .updateProfile:
+            return "/api/Account/UserInfo"
         case .logout:
             return "/api/Account/logout"
         case .changePasword:
@@ -156,16 +157,20 @@ class Account: NetworkModel {
             return "/api/Account/Register"
         case .login:
             return "/token"
+      //  case .userInfo, .updateProfile:
+         //   return "/api/Account/UserInfo"
         }
     }
     
     // Demo object isn't being posted to a server, so just return nil
     func toDictionary() -> [String: AnyObject]? {
+        
+        var params: [String: AnyObject] = [:]
         switch requestType {
         case .userInfo:
             //let startDate = Utils.adjustedTime().toString(.iso8601(nil))
             
-            var params: [String: AnyObject] = [:]
+            //var params: [String: AnyObject] = [:]
             params[Constants.Account.id] = id as AnyObject?
             params[Constants.Account.email] = email as AnyObject?
             params[Constants.Account.hasRegistered] = hasRegistered as AnyObject?
@@ -182,10 +187,10 @@ class Account: NetworkModel {
             params[Constants.Account.password] = password as AnyObject?
             params[Constants.Account.token] = token as AnyObject?
             params[Constants.Account.expiration] = expiration as AnyObject?
-            return params
+           // return params
             
         case .register:
-            var params: [String: AnyObject] = [:]
+            //var params: [String: AnyObject] = [:]
             
             params[Constants.Account.fullName] = fullName as AnyObject
             params[Constants.Account.email] = email as AnyObject?
@@ -193,11 +198,15 @@ class Account: NetworkModel {
             params[Constants.Account.avatarBase64] = avatarBase64 as AnyObject?
             params[Constants.Account.ApiKey] = apiKey as AnyObject?
             
-            return params
-            
+           // return params
+        case .updateProfile:
+            params[Constants.Account.fullName] = fullName as AnyObject?
+            params[Constants.Account.avatarBase64] = avatarBase64 as AnyObject?
+           // return params
         default:
             return nil
         }
+        return params
     }
     
 }
